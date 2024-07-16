@@ -34,7 +34,17 @@ class StudentController extends Controller
 
         //return Student::whereIn('id', [1,3,5,7,9,11])->get();
 
-        return Student::where('province', 'West Virginia')->first();
+        //return Student::where('province', 'West Virginia')->first();
+
+        //return Student::with('grade')->get();
+
+        
+        return student::with(['grades' => function(query) {
+            return $query->where('grade', '>=', 90);
+        }])->get();
+
+
+
 
 
     }
