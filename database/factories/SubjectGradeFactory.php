@@ -2,7 +2,7 @@
 
 namespace Database\Factories;
 use App\Models\Student;
-use App\Models\SubjectGrade;
+//use App\Models\SubjectGrade;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -21,7 +21,7 @@ class SubjectGradeFactory extends Factory
         return [
            'student_id' => $student->id,
            'name' => fake()->randomElement(['English', 'Filipino', 'Math', 'Science', 'PE']),
-           'grade' => fake()->randomElement[(70,98)],
+           'grade' => fake()->numberBetween(70,98),
         ];
     }
 }

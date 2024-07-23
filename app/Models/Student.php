@@ -23,7 +23,8 @@ class Student extends Model
         'birthdate',
     ];
 
-    protected $appends = ['fullname', 'birthday', ];
+    protected $appends = ['fullname'];
+    //protected $appends = ['fullname', 'birthday', ];
 
     public function getFullnameAttribute()
     {
@@ -31,13 +32,13 @@ class Student extends Model
     }
 
     
-    public function getBirthdayAttribute()
-    {
-        $birthdate = $this->attributes['birthdate'];
-        if(birthdate){
-            return Carbon::parse($birthdate)->format('F d, Y');
-        }
-    }
+    // public function getBirthdayAttribute()
+    // {
+    //     $birthdate = $this->attributes['birthdate'];
+    //     if(birthdate){
+    //         return Carbon::parse($birthdate)->format('F d, Y');
+    //     }
+    // }
   
     
     public function grade()
