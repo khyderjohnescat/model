@@ -1,12 +1,11 @@
 <?php
 
 namespace Database\Seeders;
-
+use Illuminate\Database\Seeder;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use App\Models\Student;
 use App\Models\SubjectGrade
-use Illuminate\Database\Seeder;
+// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {

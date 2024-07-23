@@ -4,7 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App/Models/SubjectGrade;
+use App\Models\SubjectGrade;
 
 class Student extends Model
 {
@@ -23,13 +23,23 @@ class Student extends Model
         'birthdate',
     ];
 
-    protected $appends = ['fullname'];
+    protected $appends = ['fullname', 'birthday', ];
 
     public function getFullnameAttribute()
     {
         return $this->fname . ' ' . $this->lname;
     }
 
+    
+    public function getBirthdayAttribute()
+    {
+        $birthdate = $this->attributes['birthdate'];
+        if(birthdate){
+            return Carbon::parse($birthdate)->format('F d, Y');
+        }
+    }
+  
+    
     public function grade()
     {
         return $this->hasMany(SubjectGrade::class, 'student_id');

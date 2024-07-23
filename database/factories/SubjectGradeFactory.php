@@ -20,8 +20,8 @@ class SubjectGradeFactory extends Factory
         $student = Student::inRandomOrder()->first();
         return [
            'student_id' => $student->id,
-           'name' => fake()->randomElement(['English', 'Filipino', 'Math', 'Science', 'PE']);
-            'grade' => fake()->randomElement(70,98),
+           'name' => fake()->randomElement(['English', 'Filipino', 'Math', 'Science', 'PE']),
+           'grade' => fake()->randomElement[(70,98)],
         ];
     }
 }
